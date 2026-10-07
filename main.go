@@ -113,6 +113,11 @@ func loadDone() map[string]bool {
 }
 
 func main() {
+	start := time.Now()
+	defer func() {
+		log.Printf("total time: %v", time.Since(start))
+	}()
+
 	done := loadDone()
 	logF, err := os.OpenFile(doneFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0o644)
 	if err != nil {
