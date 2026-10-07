@@ -34,3 +34,6 @@ go.work.sum
 
 /files
 /dist
+
+sync-files
+uploaded.log
